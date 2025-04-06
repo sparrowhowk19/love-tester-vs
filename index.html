@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Vibes Checker - Sparks or Nah?</title> <!-- Updated Title -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><span class="heart-icon"></span> Love Vibes Checker <span class="heart-icon"></span></h1>
+            <p class="tagline">Sparks or Nah? Let's Find Out!</p>
+        </header>
+        <main>
+            <!-- Photo Upload Section -->
+            <div class="card photo-upload-card">
+                <h2>Upload Your Photos</h2>
+                <div class="photo-inputs">
+                    <div class="photo-placeholder">
+                        <label for="photo1" class="upload-icon">📷</label>
+                        <input type="file" id="photo1" accept="image/*" style="display: none;">
+                        <span>Upload Your Photo</span>
+                    </div>
+                    <div class="photo-placeholder">
+                        <label for="photo2" class="upload-icon">📷</label>
+                        <input type="file" id="photo2" accept="image/*" style="display: none;">
+                        <span>Upload Their Photo</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Name Compatibility Section -->
+            <div class="card name-tester-card">
+                <h2>Enter Two Names</h2>
+                <p class="subheading">See if you're meant to be!</p>
+                <div class="input-group">
+                    <!-- Removed label, using placeholder -->
+                    <input type="text" id="name1" placeholder="Your name">
+                </div>
+                <div class="heart-separator">❤</div>
+                <div class="input-group">
+                    <!-- Removed label, using placeholder -->
+                    <input type="text" id="name2" placeholder="Their name">
+                </div>
+                <button id="calculate-btn">Test Compatibility <span class="heart-icon-btn">❤</span></button>
+                <div class="result" id="result-display" style="display: none;">
+                    <!-- Keep result display structure for now, styling will hide/show -->
+                    <h3>Compatibility Score:</h3>
+                    <div class="percentage-circle">
+                        <span id="percentage">0%</span>
+                    </div>
+                    <p id="result-message"></p>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p>Just for fun! ✨ Share with your friends</p>
+            <p>Results are 100% scientifically... made up!</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

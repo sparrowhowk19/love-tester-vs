@@ -1,0 +1,360 @@
+:root {
+    /* Updated Colors based on image */
+    --bg-color: #fdf0f5; /* Very light pink background */
+    --primary-pink: #ffcad4;
+    --primary-blue: #d4f0ff;
+    --accent-pink: #f7a6b4; /* Header text, heart */
+    --text-color: #555; /* Dark grey for general text */
+    --placeholder-text: #aaa;
+    --input-bg-pink: #ffe3e9;
+    --input-bg-blue: #e3f5ff;
+    --button-bg: #e0e0e0; /* Grey button */
+    --button-text: #666;
+    --button-heart: #ff6b6b; /* Red heart on button */
+    --card-shadow: rgba(0, 0, 0, 0.08);
+    --font-family: 'Poppins', sans-serif;
+    --spinner-color: #666; /* Spinner for grey button */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column; /* Stack container and footer */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    /* Container is now just a wrapper, no background or shadow */
+    max-width: 450px; /* Adjusted max-width */
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px; /* Space before footer */
+}
+
+header {
+    margin-bottom: 30px;
+    display: flex; /* Arrange children in a row */
+    justify-content: center; /* Center the items horizontally */
+    align-items: baseline; /* Align text baselines */
+    gap: 10px; /* Add space between title and tagline */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens if needed */
+}
+
+header h1 {
+    font-size: 2.2em; /* Adjusted size */
+    color: var(--accent-pink);
+    /* margin-bottom: 5px; */ /* Removed margin, using gap now */
+    margin-bottom: 0; /* Ensure no bottom margin */
+    font-weight: 700;
+}
+
+header .heart-icon {
+    color: var(--accent-pink);
+    font-size: 0.9em; /* Slightly smaller hearts */
+    vertical-align: middle;
+}
+
+header .tagline {
+    font-size: 1em; /* Adjusted size */
+    color: var(--text-color); /* Darker grey */
+    margin-bottom: 0; /* Removed bottom margin */
+}
+
+/* Card Base Styles */
+.card {
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 20px; /* More rounded corners */
+    box-shadow: 0 8px 25px var(--card-shadow);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.card h2 {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+/* Photo Upload Card Specific Styles */
+.photo-upload-card {
+    background: linear-gradient(135deg, var(--primary-pink), var(--primary-blue));
+}
+
+.photo-upload-card h2 {
+    color: #fff; /* White text on gradient */
+    opacity: 0.8; /* Slightly transparent */
+    font-weight: 400; /* Lighter weight */
+    margin-bottom: 25px;
+}
+
+.photo-inputs {
+    display: flex;
+    justify-content: space-around; /* Space out placeholders */
+    align-items: center;
+}
+
+.photo-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.photo-placeholder .upload-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4); /* Semi-transparent white */
+    color: #fff;
+    font-size: 2.5em; /* Larger camera icon */
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.photo-placeholder:hover .upload-icon {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.photo-placeholder span {
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Name Tester Card Specific Styles */
+.name-tester-card h2 {
+    margin-bottom: 5px; /* Less space */
+}
+
+.name-tester-card .subheading {
+    font-size: 0.95em;
+    color: var(--text-color);
+    margin-bottom: 25px;
+}
+
+.input-group {
+    margin-bottom: 15px; /* Less space between inputs */
+    position: relative; /* For potential icon placement if needed */
+}
+
+/* Remove label styling as it's not used */
+/* .input-group label { ... } */
+
+.input-group input[type="text"] {
+    width: 100%;
+    padding: 15px 20px; /* More padding */
+    border: 1px solid transparent; /* No border initially */
+    border-radius: 12px; /* Rounded inputs */
+    font-size: 1em;
+    text-align: center; /* Center placeholder */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group input[type="text"]::placeholder {
+    color: var(--placeholder-text);
+    opacity: 1; /* Ensure placeholder is visible */
+}
+
+/* Specific input background colors */
+#name1 {
+    background-color: var(--input-bg-pink);
+}
+
+#name2 {
+    background-color: var(--input-bg-blue);
+}
+
+.input-group input[type="text"]:focus {
+    outline: none;
+    border-color: var(--accent-pink); /* Use accent pink for focus */
+    box-shadow: 0 0 0 3px rgba(247, 166, 180, 0.3);
+    /* Remove focus pulse animation */
+    /* animation: inputFocusPulse 1.5s infinite ease-in-out alternate; */
+}
+
+/* Remove focus pulse animation */
+/* @keyframes inputFocusPulse { ... } */
+
+.heart-separator {
+    color: var(--accent-pink);
+    font-size: 1.8em;
+    margin: -5px 0 5px 0; /* Adjust vertical position */
+    line-height: 1;
+}
+
+#calculate-btn {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1em;
+    font-weight: 700; /* Keep bold */
+    border-radius: 12px; /* Match input rounding */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 15px; /* More space above button */
+    width: 100%; /* Full width */
+    display: flex; /* To align text and icon */
+    justify-content: center;
+    align-items: center;
+}
+
+#calculate-btn .heart-icon-btn {
+    color: var(--button-heart);
+    margin-left: 8px;
+    font-size: 1.1em; /* Make button heart slightly larger */
+}
+
+#calculate-btn:hover {
+    background-color: #d5d5d5; /* Slightly darker grey on hover */
+    transform: translateY(-1px); /* Subtle lift */
+    /* Remove gradient shadow */
+    /* box-shadow: 0 8px 15px rgba(238, 156, 167, 0.4); */
+}
+
+#calculate-btn:active {
+    transform: translateY(0) scale(0.99); /* Subtle press */
+    /* Remove gradient shadow */
+    /* box-shadow: 0 5px 10px rgba(238, 156, 167, 0.3); */
+}
+
+/* Loading state for the button */
+#calculate-btn.loading {
+    position: relative;
+    color: transparent; /* Hide text */
+    pointer-events: none; /* Disable clicks while loading */
+}
+
+#calculate-btn.loading .heart-icon-btn {
+    opacity: 0; /* Hide heart during loading */
+}
+
+#calculate-btn.loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin-top: -10px;
+    margin-left: -10px;
+    border: 3px solid rgba(102, 102, 102, 0.3); /* Spinner border */
+    border-top-color: var(--spinner-color); /* Use variable */
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+
+/* Result Styles (Keep for functionality, but hide initially if needed) */
+.result {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f1f3f5; /* Keep light grey background */
+    border-radius: 10px;
+    /* animation: fadeIn 0.5s ease-out; */ /* Keep animation if desired */
+}
+
+/* Remove fade-in animation if not needed */
+/* @keyframes fadeIn { ... } */
+
+.result h3 {
+    margin-bottom: 15px;
+    color: var(--text-color);
+    font-size: 1.3em;
+}
+
+/* Hide percentage circle if not part of the new design */
+.percentage-circle {
+    /* display: none; */ /* Uncomment if circle is removed */
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: conic-gradient(var(--accent-pink) 0% var(--percentage, 0%), #e9ecef var(--percentage, 0%) 100%); /* Use accent pink */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 15px auto;
+    transition: background 0.8s ease-out;
+    position: relative;
+}
+
+.percentage-circle::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: #f1f3f5;
+    border-radius: 50%;
+}
+
+#percentage {
+    font-size: 2.2em;
+    font-weight: 700;
+    color: var(--accent-pink); /* Use accent pink */
+    z-index: 1;
+    /* animation: scaleUp 0.5s ease-out; */ /* Keep animation if desired */
+}
+
+/* Remove scale-up animation if not needed */
+/* @keyframes scaleUp { ... } */
+
+
+#result-message {
+    font-size: 1.1em;
+    color: #495057;
+    font-weight: 400;
+    /* animation: slideInUp 0.6s ease-out 0.3s backwards; */ /* Keep animation if desired */
+}
+
+/* Remove slide-in animation if not needed */
+/* @keyframes slideInUp { ... } */
+
+footer {
+    margin-top: 0; /* Remove top margin, handled by container */
+    font-size: 0.85em; /* Smaller footer text */
+    color: #aaa; /* Lighter grey */
+    text-align: center; /* Ensure footer text is centered */
+    line-height: 1.4; /* Adjust line spacing */
+}
+
+footer p {
+    margin-bottom: 3px; /* Small space between footer lines */
+}
+
+/* Remove Initial Header Animation if not desired */
+/* header h1 { animation: fadeInDown 0.8s ease-out; } */
+/* @keyframes fadeInDown { ... } */
+
+
+/* Media Query for larger screens (adjustments if needed) */
+@media (min-width: 768px) {
+    /* Keep container padding adjustments if desired */
+    /* .container { padding: 40px 50px; } */
+
+    header h1 {
+        font-size: 2.5em; /* Slightly larger on bigger screens */
+    }
+
+    /* Remove .love-tester h2 rule */
+    /* .love-tester h2 { font-size: 2em; } */
+}
